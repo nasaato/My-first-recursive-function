@@ -1,0 +1,20 @@
+#include <conio.h>
+#include <stdio.h>
+ 
+double koren(int a, int n){
+    if(n == 1 || n == 0){
+        return (double)(1 + a)/2.0;
+    }
+    return 0.5*(koren(a, n-1) + a / koren(a, n-1));
+    
+}
+ 
+  
+int main() {
+    int a, n;
+    printf("Enter the a, n: ");
+    scanf("%d %d", &a, &n);
+    double s = koren(a, n);
+    printf("x = %lf", s);
+    return 0;
+}
